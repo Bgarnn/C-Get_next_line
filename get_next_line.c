@@ -34,6 +34,8 @@ char	*ft_line_cut(char	*line)
 	i = 0;
 	while (line[i] != '\n' && line[i] != '\0')
 		i++;
+	if (line[i] == '\0')
+		return (NULL);
 	stash = ft_substr(line, i + 1, (ft_strlen(line) - 1) - i);
 	if (*stash == '\0')
 	{
@@ -62,19 +64,32 @@ char	*get_next_line(int fd)
 	buf = NULL;
 	return (line);
 }
-// #include <stdio.h>
-// #include <fcntl.h>
+#include <stdio.h>
+#include <fcntl.h>
+
+int main()
+{
+	int	fd;
+	char	*all_line;
+
+	all_line = "";
+	fd = open("get_next_line.c", O_RDWR);
+	while(all_line != NULL)
+	{ 
+		all_line = get_next_line(fd);
+		printf("%s", all_line);
+	}
+	return (0);
+}
 
 // int main()
 // {
 // 	int	fd;
-// 	char	*line_read;
+// 	char	*one_line;
 
 // 	fd = open("get_next_line.c", O_RDWR);
-// 	do
-// 	{ 
-// 		line_read = get_next_line(fd);
-// 		printf("%s", line_read);
-// 	}while(line_read != NULL);
+// 	one_line = get_next_line(fd);
+// 	printf("%s", one_line);
 // 	return (0);
 // }
+
