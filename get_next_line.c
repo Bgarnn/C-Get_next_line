@@ -64,23 +64,23 @@ char	*get_next_line(int fd)
 	buf = NULL;
 	return (line);
 }
-#include <stdio.h>
-#include <fcntl.h>
+// #include <stdio.h>
+// #include <fcntl.h>
 
-int main()
-{
-	int	fd;
-	char	*all_line;
+// int main()
+// {
+// 	int	fd;
+// 	char	*all_line;
 
-	all_line = "";
-	fd = open("get_next_line.c", O_RDWR);
-	while(all_line != NULL)
-	{ 
-		all_line = get_next_line(fd);
-		printf("%s", all_line);
-	}
-	return (0);
-}
+// 	all_line = "";
+// 	fd = open("get_next_line.c", O_RDWR);
+// 	while(all_line != NULL)
+// 	{ 
+// 		all_line = get_next_line(fd);
+// 		printf("%s", all_line);
+// 	}
+// 	return (0);
+// }
 
 // int main()
 // {
