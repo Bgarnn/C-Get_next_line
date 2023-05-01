@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kburalek <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/01 13:57:47 by kburalek          #+#    #+#             */
+/*   Updated: 2023/05/01 13:57:50 by kburalek         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line.h"
 
 size_t	ft_strlen(const char *str)
@@ -102,4 +114,3 @@ char	*ft_substr(char const *str, unsigned int start, size_t num)
 	sub[num] = '\0';
 	return (sub);
 }
-

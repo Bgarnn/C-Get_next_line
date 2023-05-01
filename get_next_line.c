@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kburalek <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/01 13:56:54 by kburalek          #+#    #+#             */
+/*   Updated: 2023/05/01 13:56:56 by kburalek         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line.h"
 
 char	*ft_line_extra(char *stash, int fd, char *buf)
@@ -10,7 +22,7 @@ char	*ft_line_extra(char *stash, int fd, char *buf)
 	{
 		byte_read = read (fd, buf, BUFFER_SIZE);
 		if (byte_read == 0)
-			break;
+			break ;
 		if (byte_read == -1)
 			return (NULL);
 		buf[byte_read] = '\0';
@@ -21,7 +33,7 @@ char	*ft_line_extra(char *stash, int fd, char *buf)
 		free(tmp);
 		tmp = NULL;
 		if (ft_strchr(buf, '\n'))
-			break;
+			break ;
 	}
 	return (stash);
 }
@@ -56,7 +68,7 @@ char	*get_next_line(int fd)
 		return (NULL);
 	buf = (char *)malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (buf == NULL)
-		return(NULL);
+		return (NULL);
 	line = ft_line_extra(stash, fd, buf);
 	if (line != NULL)
 		stash = ft_line_cut(line);
@@ -92,4 +104,3 @@ char	*get_next_line(int fd)
 // 	printf("%s", one_line);
 // 	return (0);
 // }
-
