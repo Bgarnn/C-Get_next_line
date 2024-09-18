@@ -1,4 +1,4 @@
-#include "get_next_line.h"
+#include "line_reader.h"
 
 size_t	ft_strlen(const char *str)
 {
